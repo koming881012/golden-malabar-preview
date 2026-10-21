@@ -13,7 +13,7 @@ window.BrandContent = (() => {
   }
 
   // Real photography supplied via goldenmalabarid.com (gm-*) and atmospheric AI imagery (ai-*), each with a fixed width ladder.
-  const ladder={'gm-forest-fields':[[1800,1201],[1200,801],[800,534]],'gm-estate-shade':[[1800,1201],[1200,801],[800,534]],'gm-harvest-red':[[960,1200],[640,800]],'gm-cherries-branch':[[900,1350],[600,900]],'gm-harvest-hands':[[1200,801],[800,534]],'gm-drying-house':[[900,1200],[600,800]],'gm-cherry-sack':[[960,1200],[640,800]],'gm-forest-road':[[960,1200],[640,800]],'gm-farmers':[[1200,802],[800,534]],'gm-luwak-arm':[[706,871]],'gm-luwak-feeding':[[1200,900],[800,600]],'gm-luwak-cherries':[[900,1350],[600,900]],'gm-farmer-luwak':[[892,720]],'gm-luwak-drying':[[1800,1201],[1200,801],[800,534]],'gm-care-fruit':[[1200,675],[800,450]],'gm-community':[[1200,801],[800,534]],'gm-cupping':[[1200,900],[800,600]],'gm-pour-bar':[[960,1200],[640,800]],'gm-bali-store':[[1200,960],[800,640]],'ai-pour':[[1536,1920],[960,1200]],'ai-canopy':[[1536,1920],[960,1200]],'ai-hero-mist':[[1920,1080],[1280,720],[800,450]],'ai-roasted':[[1920,1080],[960,540]],'estate-path':[[1552,1245],[960,770],[640,513]]};
+  const ladder={'gm-forest-fields':[[1800,1201],[1200,801],[800,534]],'gm-estate-shade':[[1800,1201],[1200,801],[800,534]],'gm-harvest-red':[[960,1200],[640,800]],'gm-cherries-branch':[[900,1350],[600,900]],'gm-harvest-hands':[[1200,801],[800,534]],'gm-drying-house':[[900,1200],[600,800]],'gm-cherry-sack':[[960,1200],[640,800]],'gm-forest-road':[[960,1200],[640,800]],'gm-farmers':[[1200,802],[800,534]],'gm-luwak-arm':[[706,871]],'gm-luwak-feeding':[[1200,900],[800,600]],'gm-luwak-cherries':[[900,1350],[600,900]],'gm-farmer-luwak':[[892,720]],'gm-luwak-drying':[[1800,1201],[1200,801],[800,534]],'gm-care-fruit':[[1200,675],[800,450]],'gm-community':[[1200,801],[800,534]],'gm-cupping':[[1200,900],[800,600]],'gm-pour-bar':[[960,1200],[640,800]],'gm-bali-store':[[1200,960],[800,640]],'ai-pour':[[1536,1920],[960,1200]],'ai-canopy':[[1536,1920],[960,1200]],'ai-hero-mist':[[1920,1080],[1280,720],[800,450]],'ai-roasted':[[1920,1080],[960,540]],'estate-path':[[1552,1245],[960,770],[640,513]],'ai-estate-panorama':[[2048,1152],[1440,810],[960,540]],'home-estate':[[1094,1367],[720,900]],'home-people-a':[[1800,1200],[1200,800],[800,533]],'home-people-b':[[1094,1367],[720,900]],'home-people-c':[[1200,1600],[800,1067]],'home-cherries':[[1280,1920],[860,1290]]};
   function shot(name,alt,sizes='50vw',attrs='',eager=false) {
     const set=ladder[name];const [w,h]=set[0];
     return `<img src="${A}${name}-${w}.webp" srcset="${set.map(([sw])=>`${A}${name}-${sw}.webp ${sw}w`).join(', ')}" sizes="${escapeAttr(sizes)}" width="${w}" height="${h}" alt="${escapeAttr(alt)}" loading="${eager?'eager':'lazy'}" decoding="async" ${eager?'fetchpriority="high"':''} ${attrs}>`;
@@ -21,7 +21,7 @@ window.BrandContent = (() => {
   const estateFacts=[['兩座莊園','Ciwidey ・ Pangalengan',''],['莊園面積','320 萬','平方公尺以上'],['海拔','1,511 – 2,313','公尺'],['高地氣候','8°C – 28°C','約略氣溫']];
   function home(products,store={}) { return `
     <section class="hh-hero maison-video-hero" id="brand-film" aria-labelledby="hero-title">
-      <div class="hero-film-stage"><div class="home-film-frame hero-film-frame"><img class="hero-film-cover" src="/assets/estate-path-1552.webp" width="1552" height="1245" alt="金色百林莊園林道、林蔭與咖啡植栽" fetchpriority="high" decoding="async"><video id="home-brand-film" width="1920" height="1080" muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback noplaybackrate" tabindex="-1" preload="none" poster="/assets/estate-path-1552.webp" aria-label="金色百林莊園品牌介紹：一杯的旅程，60 秒"><source src="/media/brand-journey-v1.mp4" type="video/mp4">您的瀏覽器不支援影片播放，請<a href="/media/brand-journey-v1.mp4">開啟品牌介紹影片</a>。</video></div></div>
+      <div class="hero-film-stage"><div class="home-film-frame hero-film-frame"><img class="hero-film-cover" src="/assets/home-cover-1280.webp" srcset="/assets/home-cover-800.webp 800w, /assets/home-cover-1280.webp 1280w, /assets/home-cover-1920.webp 1920w" sizes="100vw" width="1920" height="1080" alt="金色百林莊園遮蔭林下成片的咖啡樹" fetchpriority="high" decoding="async"><video id="home-brand-film" width="1920" height="1080" muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback noplaybackrate" tabindex="-1" preload="none" poster="/assets/home-cover-1280.webp" aria-label="金色百林莊園品牌介紹：一杯的旅程，60 秒"><source src="/media/brand-journey-v1.mp4" type="video/mp4">您的瀏覽器不支援影片播放，請<a href="/media/brand-journey-v1.mp4">開啟品牌介紹影片</a>。</video></div></div>
       <div class="h-wrap hh-hero-caption"><div class="hh-hero-title"><span class="h-kicker">Mount Malabar · West Java · Since 2012</span><h1 id="hero-title"><span class="h-en">Golden Malabar</span></h1><span class="h-zh">珍惜一片山林，才有這一杯的來處。</span></div><div class="hh-hero-actions"><button class="home-film-sound" type="button" data-film-sound aria-controls="home-brand-film" aria-pressed="false">開啟聲音</button><a href="#chapter-origin" class="h-link on-dark">從 2012 年說起</a></div></div>
     </section>
     <section class="house-chapter hh-statement h-light" id="chapter-origin" aria-labelledby="origin-title">
@@ -35,13 +35,13 @@ window.BrandContent = (() => {
       </div>
     </section>
     <section class="hh-origin" aria-labelledby="land-title">
-      <figure class="hh-origin-media">${shot('gm-forest-fields','馬拉巴山莊園的高大林木與山谷間的田野','100vw','data-parallax')}</figure>
+      <figure class="hh-origin-media">${shot('ai-estate-panorama','晨光中的爪哇高地咖啡園與遠方火山','100vw','data-parallax')}</figure>
       <div class="h-wrap hh-origin-copy"><p class="h-index" data-reveal>II<span>土地</span></p><h2 id="land-title" class="h-display" data-reveal><span class="h-en">Mount Malabar, West Java</span>山林的節奏，<br>就是莊園的節奏。</h2><p data-reveal>林蔭、霧氣與高地的日夜溫差，讓咖啡果實慢慢成熟。保護這片山林，是我們經營莊園的第一件事。</p></div>
-      <span class="hh-origin-note">莊園實拍 · 林木與山谷</span>
+      <span class="hh-origin-note">意境影像 · 爪哇高地咖啡園</span>
     </section>
     <section class="hh-estate h-light" aria-label="莊園環境">
       <div class="h-wrap hh-estate-grid">
-        <figure class="h-figure hh-estate-photo" data-reveal="fade">${picture(A+'estate-real-hero.webp','莊園林道，兩旁為高大樹木與咖啡植栽',{sizes:'(max-width: 760px) 100vw, 42vw'})}</figure>
+        <figure class="h-figure hh-estate-photo" data-reveal="fade">${shot('home-estate','莊園林間小徑，兩旁為高大林木與咖啡植栽','(max-width: 760px) 100vw, 42vw')}</figure>
         <div class="hh-estate-body">
           <h3 class="h-display" data-reveal>兩座莊園，<br>一片被好好守護的高地。</h3>
           <dl class="hh-facts" data-reveal>${estateFacts.map(([k,v,u])=>`<div><dt>${k}</dt><dd>${v}${u?`<small>${u}</small>`:''}</dd></div>`).join('')}</dl>
@@ -54,15 +54,15 @@ window.BrandContent = (() => {
       <div class="h-wrap">
         <div class="hh-people-head"><p class="h-index" data-reveal>III<span>人</span></p><h2 id="people-title" class="h-display" data-reveal>守著土地的人，<br>把每一道日常做好。</h2><p data-reveal>種植者等待果實轉紅，採收者一顆顆摘下成熟的果實，處理人員接手清洗、日曬與挑選。莊園的每一季，都由在地夥伴的雙手接續完成。</p></div>
         <div class="hh-people-gallery">
-          <figure class="h-figure hh-people-a" data-reveal="fade">${shot('gm-harvest-hands','莊園採收者在咖啡樹間摘取成熟果實','(max-width: 760px) 100vw, 56vw')}<figcaption class="h-caption">採收 · 莊園實拍</figcaption></figure>
-          <figure class="h-figure hh-people-b" data-reveal="fade" style="--delay:.15s">${shot('gm-harvest-red','採收者在莊園咖啡樹叢間工作','(max-width: 760px) 100vw, 28vw')}<figcaption class="h-caption">咖啡樹叢 · 莊園實拍</figcaption></figure>
-          <figure class="h-figure hh-people-c" data-reveal="fade" style="--delay:.3s">${shot('gm-drying-house','日曬棚內攤放的咖啡原料與工作人員','(max-width: 760px) 100vw, 24vw')}<figcaption class="h-caption">日曬棚 · 莊園實拍</figcaption></figure>
+          <figure class="h-figure hh-people-a" data-reveal="fade">${shot('home-people-a','戴斗笠的採收者在咖啡樹叢間工作','(max-width: 760px) 100vw, 56vw')}<figcaption class="h-caption">咖啡樹叢間的採收 · 莊園實拍</figcaption></figure>
+          <figure class="h-figure hh-people-b" data-reveal="fade" style="--delay:.15s">${shot('home-people-b','採收者在枝頭間摘取成熟的咖啡果實','(max-width: 760px) 100vw, 28vw')}<figcaption class="h-caption">手摘成熟果實 · 莊園實拍</figcaption></figure>
+          <figure class="h-figure hh-people-c" data-reveal="fade" style="--delay:.3s">${shot('home-people-c','日曬棚內攤放的咖啡原料與工作人員','(max-width: 760px) 100vw, 24vw')}<figcaption class="h-caption">日曬棚 · 莊園實拍</figcaption></figure>
         </div>
       </div>
     </section>
     <section class="hh-craft h-dark" aria-labelledby="craft-title">
       <div class="h-wrap hh-craft-grid">
-        <div class="hh-craft-media"><figure class="h-figure" data-reveal="fade">${shot('gm-cherries-branch','枝頭上轉紅成熟的咖啡果實','(max-width: 760px) 100vw, 40vw')}</figure><p class="h-caption">咖啡果實 · 莊園實拍</p></div>
+        <div class="hh-craft-media"><figure class="h-figure" data-reveal="fade">${shot('home-cherries','枝頭上轉紅成熟的咖啡果實','(max-width: 760px) 100vw, 40vw')}</figure><p class="h-caption">咖啡果實 · 莊園實拍</p></div>
         <div class="hh-craft-body">
           <p class="h-index" data-reveal>IV<span>咖啡</span></p>
           <h2 id="craft-title" class="h-display" data-reveal>每一顆咖啡，<br>都來之不易。</h2>
