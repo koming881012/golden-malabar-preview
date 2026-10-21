@@ -1,0 +1,59 @@
+/* Environmental storytelling, document access and immediate first paint. */
+body { font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC",sans-serif; }
+.estate-facts { margin-bottom:72px; }
+.estate-facts dl { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0; border-block:1px solid var(--line); }
+.estate-facts dl>div { padding:32px 24px; border-right:1px solid var(--line); }
+.estate-facts dl>div:last-child { border:0; }
+.estate-facts dt { color:var(--muted); font-size:13px; margin-bottom:16px; }
+.estate-facts dd { margin:0; color:var(--ink); font-size:clamp(19px,2.1vw,28px); line-height:1.5; font-weight:500; }
+.estate-facts dd span { display:block; font-size:14px; font-weight:400; margin-top:4px; color:var(--muted); }
+.evidence-section { background:var(--cream,#f3eee5); }
+.evidence-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
+.evidence-card { display:flex; flex-direction:column; gap:22px; padding:24px; background:var(--paper); border:1px solid var(--line); min-width:0; color:inherit; }
+.evidence-image { height:190px; background:#eae5dc; padding:14px; }
+.evidence-image img { width:100%; height:100%; object-fit:contain; }
+.evidence-card h3 { font-size:18px; line-height:1.7; margin:8px 0 12px; }
+.evidence-card p { font-size:14px; line-height:1.9; color:var(--muted); margin:0 0 16px; }
+.evidence-status { font-size:11px; color:#375344; letter-spacing:.06em; }
+.evidence-status.pending { color:var(--coffee); }
+.evidence-pending { justify-content:center; background:transparent; }
+.evidence-pending .eyebrow { font-size:10px; line-height:1.8; margin:0; }
+.evidence-note,.credential-scope { font-size:13px; line-height:1.9; color:var(--muted); margin-top:24px; max-width:780px; }
+.purchase-proof { margin:24px 0; padding:24px; border:1px solid var(--line); background:#f2f0e8; }
+.purchase-proof .eyebrow { font-size:10px; margin-bottom:10px; }
+.purchase-proof h2 { font-size:20px; line-height:1.6; margin:0 0 8px; }
+.purchase-proof p { margin:0 0 14px; font-size:13px; line-height:1.9; }
+.purchase-proof small { display:block; margin-top:14px; color:var(--muted); font-size:11px; line-height:1.8; }
+.proof-links { display:flex; flex-wrap:wrap; gap:10px 20px; font-size:12px; line-height:1.8; }
+.proof-links a { text-decoration:underline; text-underline-offset:4px; }
+.pending-document { border-left:2px solid var(--coffee); padding:20px 24px; margin:24px 0; background:var(--cream,#f3eee5); }
+.pending-document strong { font-size:15px; font-weight:500; }
+.pending-document p { font-size:14px; line-height:1.9; margin:12px 0 0; max-width:760px; }
+[id] { scroll-margin-top:110px; }
+.hero-film-frame { position:relative; }
+.hero-film-frame .hero-film-cover { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:1; pointer-events:none; opacity:1; transition:opacity 650ms ease; background:var(--espresso); }
+.hero-film-frame .hero-film-cover.is-revealed { opacity:0; }
+.hero-film-cover[hidden] { display:none; }
+.hero-film-frame video { background:transparent; }
+@media(prefers-reduced-motion:reduce){.hero-film-frame .hero-film-cover{transition:none;}}
+.catalog-status { grid-column:1 / -1; padding:32px 0; color:var(--muted); min-height:120px; }
+.catalog-status p { margin-bottom:20px; }
+@media(max-width:1100px) {
+  .evidence-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .estate-facts dl { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .estate-facts dl>div:nth-child(2) { border-right:0; }
+  .estate-facts dl>div:nth-child(-n+2) { border-bottom:1px solid var(--line); }
+}
+@media(max-width:700px) {
+  .estate-facts { margin-bottom:48px; }
+  .estate-facts dl>div { padding:22px 14px; }
+  .estate-facts dd { font-size:20px; }
+  .estate-facts dd span { font-size:12px; }
+  .evidence-grid { grid-template-columns:1fr; gap:16px; }
+  .evidence-card { display:grid; grid-template-columns:105px minmax(0,1fr); padding:20px; gap:18px; }
+  .evidence-image { height:160px; padding:8px; }
+  .evidence-card h3 { font-size:17px; margin-top:6px; }
+  .evidence-card p { font-size:13px; }
+  .evidence-pending { display:flex; gap:10px; }
+  .purchase-proof { padding:20px; }
+}
