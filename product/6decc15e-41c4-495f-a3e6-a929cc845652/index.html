@@ -17,7 +17,7 @@
     <script type="application/ld+json" id="site-schema">{"@context":"https://schema.org","@type":"Product","name":"麝香貓咖啡濾掛包普通盒裝","description":"一盒十包，每包 10 g。獨立濾掛包方便日常沖煮，將莊園咖啡帶進每一個想慢下來的時刻。 採用 100% 麝香貓咖啡，不摻混一般咖啡豆，呈現印尼西爪哇馬拉巴山莊園的風味。","image":"https://koming881012.github.io/golden-malabar-preview/assets/product-sachets.webp","brand":{"@type":"Brand","name":"Golden Malabar"},"offers":{"@type":"Offer","url":"https://koming881012.github.io/golden-malabar-preview/product/6decc15e-41c4-495f-a3e6-a929cc845652","price":1680,"priceCurrency":"TWD","availability":"https://schema.org/InStock"}}</script>
     <!-- GM:HEAD:END -->
   <script>(()=>{const B="/golden-malabar-preview";
-window.GM_PATH=()=>{const p=location.pathname;return (B&&p.startsWith(B)?p.slice(B.length):p)||'/';};
+window.GM_PATH=()=>{const p=location.pathname;return (B&&p.startsWith(B)?p.slice(B.length):p).replace(/(.)\/+$/,'$1')||'/';};
 window.GM_URL=u=>typeof u==='string'&&u.startsWith('/')&&!(B&&u.startsWith(B+'/'))?B+u:u;
 window.GM_API=u=>{const p=u.split('?')[0];return ['/api/bootstrap','/api/payment-options'].includes(p)?B+p+'.json':B+u;};
 window.GM_REBASE=h=>!B?h:String(h).replace(/\b(href|src|poster|action)="\/(?!\/)/g,'$1="'+B+'/').replace(/\bsrcset="([^"]*)"/g,(m,v)=>'srcset="'+v.replace(/(^|,\s*)\/(?!\/)/g,'$1'+B+'/')+'"').replace(/url\((['"]?)\/(?!\/)/g,'url($1'+B+'/');

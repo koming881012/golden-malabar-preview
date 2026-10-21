@@ -17,7 +17,7 @@
     <script type="application/ld+json" id="site-schema">{"@context":"https://schema.org","@type":"WebPage","name":"永續理念｜金色百林莊園","description":"珍惜山林，也珍惜與動物共處的土地。從森林棲地、麝香貓復育照護到在地合作，認識金色百林保護環境的方向。","url":"https://koming881012.github.io/golden-malabar-preview/sustainability","inLanguage":"zh-Hant"}</script>
     <!-- GM:HEAD:END -->
   <script>(()=>{const B="/golden-malabar-preview";
-window.GM_PATH=()=>{const p=location.pathname;return (B&&p.startsWith(B)?p.slice(B.length):p)||'/';};
+window.GM_PATH=()=>{const p=location.pathname;return (B&&p.startsWith(B)?p.slice(B.length):p).replace(/(.)\/+$/,'$1')||'/';};
 window.GM_URL=u=>typeof u==='string'&&u.startsWith('/')&&!(B&&u.startsWith(B+'/'))?B+u:u;
 window.GM_API=u=>{const p=u.split('?')[0];return ['/api/bootstrap','/api/payment-options'].includes(p)?B+p+'.json':B+u;};
 window.GM_REBASE=h=>!B?h:String(h).replace(/\b(href|src|poster|action)="\/(?!\/)/g,'$1="'+B+'/').replace(/\bsrcset="([^"]*)"/g,(m,v)=>'srcset="'+v.replace(/(^|,\s*)\/(?!\/)/g,'$1'+B+'/')+'"').replace(/url\((['"]?)\/(?!\/)/g,'url($1'+B+'/');
