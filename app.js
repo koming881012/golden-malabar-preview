@@ -42,7 +42,11 @@ function setupMotion() {
   setupMotion.controller?.abort();
   if(window.__GM_PRERENDER__||typeof IntersectionObserver==='undefined')return;
   const controller=new AbortController();setupMotion.controller=controller;
-  const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting){entry.target.classList.add('is-in');observer.unobserve(entry.target);}},{rootMargin:'0px 0px -8% 0px'});
+  let observed=false;
+  const observer=new IntersectionObserver(entries=>{observed=true;for(const entry of entries)if(entry.isIntersecting){entry.target.classList.add('is-in');observer.unobserve(entry.target);}},{rootMargin:'0px 0px -8% 0px'});
+  // Some in-app browsers never deliver intersection callbacks; content must not stay hidden.
+  const failsafe=setTimeout(()=>{if(!observed)document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('is-in'));},2000);
+  controller.signal.addEventListener('abort',()=>clearTimeout(failsafe),{once:true});
   document.querySelectorAll('[data-reveal]:not(.is-in)').forEach(el=>observer.observe(el));
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const clips=new IntersectionObserver(entries=>{for(const entry of entries){const v=entry.target;if(entry.isIntersecting&&!reduced)v.play().catch(()=>{});else v.pause();}},{threshold:.25});
