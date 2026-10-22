@@ -1,0 +1,48 @@
+/* Official site palette: black & gold, after the packaging. Applied through html[data-theme="noir"] (set in index.html);
+   the admin removes the attribute and keeps the light working style from styles.css. */
+html[data-theme="noir"] {
+  --t-base:#0c0b09; --t-raised:#1a1714; --t-raised-2:#231f1a; --t-band:#16130f; --t-foot:#060504;
+  --t-halo-1:#3a3128; --t-halo-2:#1c1813; --t-halo-3:#100e0b; --t-gold-text:#e2c992;
+  --h-linen:var(--t-base); --h-paper:var(--t-base); --h-stone:var(--t-raised); --h-sand:var(--t-raised-2);
+  --h-ink:#efe6d3; --h-ink-2:rgba(239,230,211,.8); --h-ink-3:rgba(239,230,211,.56); --h-rule:rgba(201,169,106,.22);
+  --h-umber:var(--t-band); --h-umber-2:var(--t-raised);
+  --h-cream:#efe6d3; --h-cream-2:rgba(239,230,211,.82); --h-cream-3:rgba(239,230,211,.58); --h-cream-rule:rgba(201,169,106,.2);
+  --h-brass:#c9a96a; --h-brass-light:#dcc290;
+  color-scheme:dark;
+}
+html[data-theme="noir"] {
+  & body { background:var(--t-base); }
+  & ::selection { background:var(--h-brass); color:var(--t-base); }
+  /* Gold display type, cream body copy — the packaging's black-and-gold voice. */
+  & .house .h-display,& .house .ph-title,& .hh-hero-title .h-en,& .piece h3 a,& .product-purchase h1,& .hh-pledge-list h3,& .timeline h3,& .doc-text h2,& .compare h3,& .entry h2,& .film-text h3,& .summary h3,& .order-panel h3,& .checkout-form h2,& .order-success > h2 { color:var(--t-gold-text); }
+  & .masthead { background:color-mix(in srgb,var(--t-base) 92%,transparent); color:var(--h-cream); border-bottom-color:var(--h-rule); }
+  & .masthead-brand .h-emblem { color:var(--h-brass-light); }
+  & .chapter-nav { background:color-mix(in srgb,var(--t-base) 95%,transparent); }
+  & .chapter-nav a[aria-current="page"]::after { background:var(--h-brass); }
+  & .house .piece-stage,& .house .product-stage { background:radial-gradient(ellipse at 50% 42%,var(--t-halo-1) 0%,var(--t-halo-2) 62%,var(--t-halo-3) 100%); }
+  & .house .piece-stage img,& .house .product-stage img { filter:drop-shadow(0 26px 30px rgba(0,0,0,.55)); }
+  & .h-link::before { background:var(--h-brass); opacity:.6; }
+  & .h-button { color:var(--h-cream); border-color:rgba(201,169,106,.55); }
+  & .h-button:hover { background:var(--h-brass); color:var(--t-base); border-color:var(--h-brass); }
+  & .h-button.is-solid,& .house .btn { background:var(--h-brass); border-color:var(--h-brass); color:var(--t-base); }
+  & .h-button.is-solid:hover,& .house .btn:hover { background:var(--h-brass-light); border-color:var(--h-brass-light); }
+  & .house .btn-outline { background:transparent; color:var(--h-cream); }
+  & .house .btn-outline:hover { background:var(--h-brass); color:var(--t-base); }
+  & .house select,& .house input:not([type="checkbox"]):not([type="radio"]),& .house textarea { background:var(--t-raised); color:var(--h-cream); border-color:var(--h-rule); }
+  & .house input::placeholder,& .house textarea::placeholder { color:var(--h-ink-3); }
+  & .house input:focus,& .house select:focus,& .house textarea:focus { outline-color:var(--h-brass); }
+  /* Panels sit one step above the page so they still read as panels. */
+  & .house .summary,& .house .order-panel { background:var(--t-raised); }
+  & .house .cart-item img,& .house .gallery-thumbnail img { background:var(--t-raised-2); }
+  & .colophon { background:var(--t-foot); border-top:1px solid var(--h-rule); }
+  & .colophon-brand .h-emblem { color:var(--h-brass-light); }
+  & .hh-collection-proof a:hover,& .house .purchase-proof a:hover { color:var(--h-brass-light); border-color:var(--h-brass-light); }
+  & .piece-add:hover { color:var(--h-brass-light); }
+  & .hh-proof-list .s.pending,& .house .purchase-proof small.pending { color:var(--h-brass-light); }
+  & .filter.active,& .filter:hover { color:var(--t-gold-text); border-color:var(--h-brass); }
+  & .gallery-thumbnail.is-current { border-color:var(--h-brass); }
+  & .house .payment-chip.paid { border-color:#8fa877; color:#b5cba1; }
+  & .house .notice { color:var(--h-cream) !important; background:var(--t-raised); border-color:var(--h-rule); border-left-color:var(--h-brass); }
+  & .house .payment-method,& .house .empty-state { background:var(--t-raised); border-color:var(--h-rule); }
+  & #toast { background:var(--t-raised-2); color:var(--h-cream); border:1px solid var(--h-rule); }
+}

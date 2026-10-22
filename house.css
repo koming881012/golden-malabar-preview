@@ -443,6 +443,7 @@ body { background:var(--h-linen); color:var(--h-ink); font-family:var(--h-sans);
 .house .product-gallery { position:sticky; top:calc(var(--h-header) + 24px); }
 .house .product-stage { position:relative; aspect-ratio:1/1; background:radial-gradient(ellipse at 50% 42%,#f7f2ea 0%,#e9e1d4 70%,#e1d8c9 100%); overflow:hidden; }
 .house .product-stage img { position:absolute; inset:8%; width:84%; height:84%; object-fit:contain; filter:drop-shadow(0 26px 30px rgba(40,28,16,.18)); }
+.house .product-stage img,.house .piece-stage img { mix-blend-mode:normal; }
 .house .product-stage img.is-reference { inset:0; width:100%; height:100%; object-fit:cover; filter:none; }
 .house .gallery-thumbnails { display:flex; gap:14px; margin-top:16px; }
 .house .gallery-thumbnail { display:flex; align-items:center; gap:12px; padding:8px 14px 8px 8px; border:1px solid var(--h-rule); background:transparent; color:var(--h-ink-2); font:500 13.5px/1 var(--h-sans); letter-spacing:.06em; cursor:pointer; transition:border-color .4s; }
